@@ -72,7 +72,6 @@ extension BerlinClock_DEV131Tests {
         XCTAssertEqual(lamps.fiveHourLamps.count, 4)
     }
     
-    
     func test_FiveHour_LampState_Colors_05_Hours() {
         sut = BerlinClock(5, 51, 58)
         
@@ -85,6 +84,20 @@ extension BerlinClock_DEV131Tests {
 // Testing single hour lamp status
 extension BerlinClock_DEV131Tests {
     
+    func test_SingleHour_LampState_Counts_00_Hours() {
+        sut = BerlinClock(0, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleHourLamps.count, 0)
+    }
+    
+    func test_SingleHour_LampState_Counts_01_Hours() {
+        sut = BerlinClock(1, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleHourLamps.count, 1)
+    }
+    
     func test_SingleHour_LampState_Counts_16_Hours() {
         sut = BerlinClock(16, 51, 58)
         
@@ -92,10 +105,46 @@ extension BerlinClock_DEV131Tests {
         XCTAssertEqual(lamps.singleHourLamps.count, 1)
     }
     
+    func test_SingleHour_LampState_Counts_23_Hours() {
+        sut = BerlinClock(23, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleHourLamps.count, 3)
+    }
+    
+    func test_SingleHour_LampState_Colors_23_Hours() {
+        sut = BerlinClock(23, 51, 58)
+        
+        let expected: [BerlinClock.LampColor] = [ .red, .red, .red ]
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleHourLamps, expected)
+    }
+    
 }
 
 // Testing five minute lamp status
 extension BerlinClock_DEV131Tests {
+    
+    func test_FiveMinute_LampState_Counts_00_Minutes() {
+        sut = BerlinClock(16, 0, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.fiveMinuteLamps.count, 0)
+    }
+    
+    func test_FiveMinute_LampState_Counts_04_Minutes() {
+        sut = BerlinClock(16, 4, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.fiveMinuteLamps.count, 0)
+    }
+    
+    func test_FiveMinute_LampState_Counts_23_Minutes() {
+        sut = BerlinClock(16, 23, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.fiveMinuteLamps.count, 4)
+    }
     
     func test_FiveMinute_LampState_Counts_51_Minutes() {
         sut = BerlinClock(16, 51, 58)
@@ -118,11 +167,40 @@ extension BerlinClock_DEV131Tests {
 // Testing single minute lamp status
 extension BerlinClock_DEV131Tests {
     
-    func test_SingleMinute_LampState_Counts_51_Minutes() {
-        sut = BerlinClock(16, 51, 58)
+    func test_SingleMinute_LampState_Counts_00_Minutes() {
+        sut = BerlinClock(16, 00, 58)
         
         let lamps = sut.getOutput()
-        XCTAssertEqual(lamps.singleMinuteLamps.count, 1)
+        XCTAssertEqual(lamps.singleMinuteLamps.count, 0)
+    }
+    
+    func test_SingleMinute_LampState_Counts_32_Minutes() {
+        sut = BerlinClock(16, 32, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleMinuteLamps.count, 2)
+    }
+    
+    func test_SingleMinute_LampState_Counts_35_Minutes() {
+        sut = BerlinClock(16, 35, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleMinuteLamps.count, 0)
+    }
+    
+    func test_SingleMinute_LampState_Counts_59_Minutes() {
+        sut = BerlinClock(16, 59, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleMinuteLamps.count, 4)
+    }
+    
+    func test_SingleMinute_LampState_Colors_51_Minutes() {
+        sut = BerlinClock(16, 51, 58)
+        
+        let expected: [BerlinClock.LampColor] = [ .yellow ]
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleMinuteLamps, expected)
     }
     
 }
