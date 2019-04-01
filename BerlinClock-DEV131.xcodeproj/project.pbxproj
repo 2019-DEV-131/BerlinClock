@@ -19,6 +19,7 @@
 		154684102252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */; };
 		154684112252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */; };
 		154684122252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */; };
+		15C5D8E1225287B600A2C846 /* LampColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5D8E0225287B600A2C846 /* LampColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+FiveMinuteLampTests.swift"; sourceTree = "<group>"; };
 		1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SecondLampTests.swift"; sourceTree = "<group>"; };
 		1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SingleMinuteLampTests.swift"; sourceTree = "<group>"; };
+		15C5D8E0225287B600A2C846 /* LampColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				154683DE2252527A00E557F6 /* AppDelegate.swift */,
+				15C5D8E0225287B600A2C846 /* LampColorView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				154683E12252527A00E557F6 /* ViewController.swift in Sources */,
 				154683DF2252527A00E557F6 /* AppDelegate.swift in Sources */,
+				15C5D8E1225287B600A2C846 /* LampColorView.swift in Sources */,
 				154684062252579A00E557F6 /* BerlinClock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
