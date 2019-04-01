@@ -14,6 +14,11 @@
 		154683E92252527B00E557F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154683E72252527B00E557F6 /* LaunchScreen.storyboard */; };
 		154683F42252527B00E557F6 /* BerlinClock_DEV131Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154683F32252527B00E557F6 /* BerlinClock_DEV131Tests.swift */; };
 		154684062252579A00E557F6 /* BerlinClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154684052252579A00E557F6 /* BerlinClock.swift */; };
+		154684082252680100E557F6 /* BerlinClock_DEV131Tests+SingleHourLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154684072252680100E557F6 /* BerlinClock_DEV131Tests+SingleHourLampTests.swift */; };
+		1546840F2252684700E557F6 /* BerlinClock_DEV131Tests+FiveHourLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840A2252684600E557F6 /* BerlinClock_DEV131Tests+FiveHourLampTests.swift */; };
+		154684102252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */; };
+		154684112252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */; };
+		154684122252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		154683F32252527B00E557F6 /* BerlinClock_DEV131Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClock_DEV131Tests.swift; sourceTree = "<group>"; };
 		154683F52252527B00E557F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		154684052252579A00E557F6 /* BerlinClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClock.swift; sourceTree = "<group>"; };
+		154684072252680100E557F6 /* BerlinClock_DEV131Tests+SingleHourLampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SingleHourLampTests.swift"; sourceTree = "<group>"; };
+		1546840A2252684600E557F6 /* BerlinClock_DEV131Tests+FiveHourLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+FiveHourLampTests.swift"; sourceTree = "<group>"; };
+		1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+FiveMinuteLampTests.swift"; sourceTree = "<group>"; };
+		1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SecondLampTests.swift"; sourceTree = "<group>"; };
+		1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SingleMinuteLampTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				154683F32252527B00E557F6 /* BerlinClock_DEV131Tests.swift */,
+				1546840A2252684600E557F6 /* BerlinClock_DEV131Tests+FiveHourLampTests.swift */,
+				1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */,
+				1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */,
+				154684072252680100E557F6 /* BerlinClock_DEV131Tests+SingleHourLampTests.swift */,
+				1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */,
 				154683F52252527B00E557F6 /* Info.plist */,
 			);
 			path = "BerlinClock-DEV131Tests";
@@ -250,6 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154684112252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift in Sources */,
+				1546840F2252684700E557F6 /* BerlinClock_DEV131Tests+FiveHourLampTests.swift in Sources */,
+				154684102252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift in Sources */,
+				154684082252680100E557F6 /* BerlinClock_DEV131Tests+SingleHourLampTests.swift in Sources */,
+				154684122252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift in Sources */,
 				154683F42252527B00E557F6 /* BerlinClock_DEV131Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
