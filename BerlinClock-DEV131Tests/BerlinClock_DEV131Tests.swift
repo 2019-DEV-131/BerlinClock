@@ -8,20 +8,124 @@ class BerlinClock_DEV131Tests: XCTestCase {
     override func setUp() {
         
     }
-
+    
     override func tearDown() {
         sut = nil
     }
+}
+
+// Testing date initialiser
+extension BerlinClock_DEV131Tests {
     
-    func test_Berlin_Clock_16_50_55() {
+    func test_Init_By_Date_Success() {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        guard let date = dateformatter.date(from: "2019/01/05 11:12:13") else {
+            XCTAssertFalse(true, "Date conversion failed.")
+            return
+        }
+        guard let clock = BerlinClock(date: date) else {
+            XCTAssertFalse(true, "Failed to initialise clock")
+            return
+        }
+        XCTAssertNotNil(clock)
+    }
+    
+    // NOTE: Can add failure test for init. But not sure how to.
+}
+    
+// Testing five hour lamp status
+extension BerlinClock_DEV131Tests {
+    
+    func test_FiveHour_LampState_Counts_16_Hours() {
+        sut = BerlinClock(16, 51, 58)
         
-        sut = BerlinClock(16, 50, 55)
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.fiveHourLamps.count, 3)
+    }
+    
+}
+
+// Testing single hour lamp status
+extension BerlinClock_DEV131Tests {
+    
+    func test_SingleHour_LampState_Counts_16_Hours() {
+        sut = BerlinClock(16, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleHourLamps.count, 1)
+    }
+    
+}
+
+// Testing five minute lamp status
+extension BerlinClock_DEV131Tests {
+    
+    func test_FiveMinute_LampState_Counts_51_Minutes() {
+        sut = BerlinClock(16, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.fiveMinuteLamps.count, 10)
+    }
+    
+    func test_FiveMinute_LampState_Colors_51_Minutes() {
+        sut = BerlinClock(16, 51, 58)
+        
+        let expected: [BerlinClock.LampColor] = [ .yellow, .yellow, .red, .yellow, .yellow, .red, .yellow, .yellow, .red, .yellow ]
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.fiveMinuteLamps, expected)
+    }
+    
+}
+
+// Testing single minute lamp status
+extension BerlinClock_DEV131Tests {
+    
+    func test_SingleMinute_LampState_Counts_51_Minutes() {
+        sut = BerlinClock(16, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.singleMinuteLamps.count, 1)
+    }
+    
+}
+
+// Testing second lamp status
+extension BerlinClock_DEV131Tests {
+    
+    func test_Second_LampState_Counts_00_Seconds() {
+        sut = BerlinClock(16, 51, 0)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.secondLamp, .red)
+    }
+    
+    func test_Second_LampState_Counts_01_Seconds() {
+        sut = BerlinClock(16, 51, 1)
         
         let lamps = sut.getOutput()
         XCTAssertEqual(lamps.secondLamp, .none)
-        XCTAssertEqual(lamps.fiveHourLamps.count, 3)
-        XCTAssertEqual(lamps.singleHourLamps.count, 1)
-        XCTAssertEqual(lamps.fiveMinuteLamps.count, 10)
-        XCTAssertEqual(lamps.singleMinuteLamps.count, 0)
+    }
+    
+    func test_Second_LampState_Counts_30_Seconds() {
+        sut = BerlinClock(16, 51, 30)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.secondLamp, .red)
+    }
+    
+    func test_Second_LampState_Counts_58_Seconds() {
+        sut = BerlinClock(16, 51, 58)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.secondLamp, .red)
+    }
+    
+    func test_Second_LampState_Counts_59_Seconds() {
+        sut = BerlinClock(16, 51, 59)
+        
+        let lamps = sut.getOutput()
+        XCTAssertEqual(lamps.secondLamp, .none)
     }
 }
