@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154683DF2252527A00E557F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154683DE2252527A00E557F6 /* AppDelegate.swift */; };
-		154683E12252527A00E557F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154683E02252527A00E557F6 /* ViewController.swift */; };
+		154683E12252527A00E557F6 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154683E02252527A00E557F6 /* ClockViewController.swift */; };
 		154683E42252527A00E557F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154683E22252527A00E557F6 /* Main.storyboard */; };
 		154683E62252527B00E557F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154683E52252527B00E557F6 /* Assets.xcassets */; };
 		154683E92252527B00E557F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154683E72252527B00E557F6 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		154684102252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */; };
 		154684112252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */; };
 		154684122252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */; };
-		15C5D8E1225287B600A2C846 /* LampColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C5D8E0225287B600A2C846 /* LampColorView.swift */; };
+		15468414225269E700E557F6 /* LampColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15468413225269E700E557F6 /* LampColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		154683DB2252527A00E557F6 /* BerlinClock-DEV131.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BerlinClock-DEV131.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154683DE2252527A00E557F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		154683E02252527A00E557F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		154683E02252527A00E557F6 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		154683E32252527A00E557F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		154683E52252527B00E557F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		154683E82252527B00E557F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		1546840B2252684700E557F6 /* BerlinClock_DEV131Tests+FiveMinuteLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+FiveMinuteLampTests.swift"; sourceTree = "<group>"; };
 		1546840C2252684700E557F6 /* BerlinClock_DEV131Tests+SecondLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SecondLampTests.swift"; sourceTree = "<group>"; };
 		1546840D2252684700E557F6 /* BerlinClock_DEV131Tests+SingleMinuteLampTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BerlinClock_DEV131Tests+SingleMinuteLampTests.swift"; sourceTree = "<group>"; };
-		15C5D8E0225287B600A2C846 /* LampColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampColorView.swift; sourceTree = "<group>"; };
+		15468413225269E700E557F6 /* LampColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				154683DE2252527A00E557F6 /* AppDelegate.swift */,
-				15C5D8E0225287B600A2C846 /* LampColorView.swift */,
+				15468413225269E700E557F6 /* LampColorView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 		154684002252528A00E557F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				154683E02252527A00E557F6 /* ViewController.swift */,
+				154683E02252527A00E557F6 /* ClockViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				154683E12252527A00E557F6 /* ViewController.swift in Sources */,
+				154683E12252527A00E557F6 /* ClockViewController.swift in Sources */,
 				154683DF2252527A00E557F6 /* AppDelegate.swift in Sources */,
-				15C5D8E1225287B600A2C846 /* LampColorView.swift in Sources */,
+				15468414225269E700E557F6 /* LampColorView.swift in Sources */,
 				154684062252579A00E557F6 /* BerlinClock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

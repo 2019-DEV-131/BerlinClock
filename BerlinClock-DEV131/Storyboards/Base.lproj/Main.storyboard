@@ -1,21 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="BerlinClock_DEV131" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oCB-ah-tRR">
+                                <rect key="frame" x="16" y="60" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jA4-mb-5gV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8nr-QX-Z4P">
+                                <rect key="frame" x="16" y="118" width="382" height="282"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdC-JF-FQU">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTW-Xo-NZM" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="166" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tTW-Xo-NZM" secondAttribute="height" id="DJT-K6-hGN"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tTW-Xo-NZM" firstAttribute="centerY" secondItem="mdC-JF-FQU" secondAttribute="centerY" id="Pb0-yf-S6K"/>
+                                            <constraint firstAttribute="height" constant="50" id="VAu-8r-PdX"/>
+                                            <constraint firstItem="tTW-Xo-NZM" firstAttribute="centerX" secondItem="mdC-JF-FQU" secondAttribute="centerX" id="mss-Sz-FMU"/>
+                                            <constraint firstItem="tTW-Xo-NZM" firstAttribute="top" secondItem="mdC-JF-FQU" secondAttribute="top" id="oob-Ct-Qs0"/>
+                                            <constraint firstAttribute="bottom" secondItem="tTW-Xo-NZM" secondAttribute="bottom" id="uv5-fi-8Cl"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tbS-zU-FCc">
+                                        <rect key="frame" x="0.0" y="58" width="382" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aah-k2-rzy" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="0nR-Xw-4zo"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvQ-l8-5Y5" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPz-KM-rC3" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="195" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxv-Tm-saF" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="292.5" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oLz-Bs-Ihb">
+                                        <rect key="frame" x="0.0" y="116" width="382" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWC-AF-gmM" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="AiG-DQ-5iV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqR-8F-ERe" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1f-UF-vLN" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="195" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diF-Kx-hZG" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="292.5" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QR8-1E-ar0">
+                                        <rect key="frame" x="0.0" y="174" width="382" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPs-oP-B8n" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="3Pb-qK-FbR"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-VK-QZO" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="35.5" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7p-WM-MPD" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="71" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pru-fC-Ylz" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="106.5" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2f-ml-JP3" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="142" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNh-r7-YgY" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="177.5" y="0.0" width="27" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2p-b6-At7" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="212.5" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On8-VW-NMY" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="248" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ka3-c5-kBD" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="283.5" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-bZ-cK9" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="319" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUa-u2-3gc" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="354.5" y="0.0" width="27.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-tH-FgO">
+                                        <rect key="frame" x="0.0" y="232" width="382" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sb4-oa-nOn" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="R7V-nh-fFY"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tj0-lR-djv" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-Z1-4GK" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="195" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cF0-sK-Fxu" customClass="LampColorView" customModule="BerlinClock_DEV131" customModuleProvider="target">
+                                                <rect key="frame" x="292.5" y="0.0" width="89.5" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.2870109904" blue="0.064736476769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondsView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8nr-QX-Z4P" firstAttribute="top" secondItem="oCB-ah-tRR" secondAttribute="bottom" constant="8" id="KI9-9r-i06"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8nr-QX-Z4P" secondAttribute="trailing" constant="16" id="UXR-EG-iXp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCB-ah-tRR" secondAttribute="trailing" constant="16" id="aDX-i5-41r"/>
+                            <constraint firstItem="oCB-ah-tRR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cdp-D1-44b"/>
+                            <constraint firstItem="8nr-QX-Z4P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gSu-GF-m79"/>
+                            <constraint firstItem="oCB-ah-tRR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="oA6-hi-QPa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="digitalTimeLabel" destination="oCB-ah-tRR" id="W1g-0Y-N86"/>
+                        <outlet property="secondsLampView" destination="tTW-Xo-NZM" id="FwX-ag-yGV"/>
+                        <outletCollection property="fiveHourLampViews" destination="aah-k2-rzy" collectionClass="NSMutableArray" id="9A9-bG-2Tt"/>
+                        <outletCollection property="fiveHourLampViews" destination="rvQ-l8-5Y5" collectionClass="NSMutableArray" id="jLT-1F-SKI"/>
+                        <outletCollection property="fiveHourLampViews" destination="DPz-KM-rC3" collectionClass="NSMutableArray" id="Jqi-Hs-hqa"/>
+                        <outletCollection property="fiveHourLampViews" destination="oxv-Tm-saF" collectionClass="NSMutableArray" id="bmV-PI-hhE"/>
+                        <outletCollection property="singleHourLampViews" destination="EWC-AF-gmM" collectionClass="NSMutableArray" id="gnE-P0-RRf"/>
+                        <outletCollection property="singleHourLampViews" destination="dqR-8F-ERe" collectionClass="NSMutableArray" id="f43-A0-A8u"/>
+                        <outletCollection property="singleHourLampViews" destination="N1f-UF-vLN" collectionClass="NSMutableArray" id="cbH-7b-xSX"/>
+                        <outletCollection property="singleHourLampViews" destination="diF-Kx-hZG" collectionClass="NSMutableArray" id="f8J-9W-CXu"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="VPs-oP-B8n" collectionClass="NSMutableArray" id="IRs-o5-a09"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="EWx-VK-QZO" collectionClass="NSMutableArray" id="ZWM-16-2TX"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="I7p-WM-MPD" collectionClass="NSMutableArray" id="UqH-61-hcP"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="Pru-fC-Ylz" collectionClass="NSMutableArray" id="T6R-CL-szh"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="m2f-ml-JP3" collectionClass="NSMutableArray" id="ofq-qI-n24"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="vNh-r7-YgY" collectionClass="NSMutableArray" id="jlV-8Y-83A"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="s2p-b6-At7" collectionClass="NSMutableArray" id="V5t-Rf-Tnb"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="On8-VW-NMY" collectionClass="NSMutableArray" id="rDF-df-Gmg"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="Ka3-c5-kBD" collectionClass="NSMutableArray" id="4kI-S7-dMc"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="8mQ-bZ-cK9" collectionClass="NSMutableArray" id="Ahh-oN-riy"/>
+                        <outletCollection property="fiveMinuteLampViews" destination="dUa-u2-3gc" collectionClass="NSMutableArray" id="v0B-ZP-aeb"/>
+                        <outletCollection property="singleMinuteLampViews" destination="Sb4-oa-nOn" collectionClass="NSMutableArray" id="EnJ-ie-lcZ"/>
+                        <outletCollection property="singleMinuteLampViews" destination="tj0-lR-djv" collectionClass="NSMutableArray" id="xB2-hH-k3u"/>
+                        <outletCollection property="singleMinuteLampViews" destination="LJn-Z1-4GK" collectionClass="NSMutableArray" id="4FU-vf-AwI"/>
+                        <outletCollection property="singleMinuteLampViews" destination="cF0-sK-Fxu" collectionClass="NSMutableArray" id="M3l-FN-5nI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

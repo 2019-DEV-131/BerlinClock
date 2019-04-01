@@ -2,9 +2,9 @@ import Foundation
 
 class BerlinClock {
     
-    private var hours: Int
-    private var minutes: Int
-    private var seconds: Int
+    private(set) var hours: Int
+    private(set) var minutes: Int
+    private(set) var seconds: Int
     
     enum LampColor {
         case red
