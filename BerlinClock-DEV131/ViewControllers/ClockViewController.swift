@@ -1,5 +1,6 @@
 import UIKit
 
+// Note: Could improve by using MVVM for better separation but for now we should skip it and just focus on the actual UI implementation part
 class ClockViewController: UIViewController {
 
     @IBOutlet weak var digitalTimeLabel: UILabel!
@@ -14,16 +15,14 @@ class ClockViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reset()
         clock = BerlinClock(date: Date())
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLampViews), userInfo: nil, repeats: true)
     }
     
-    @objc private func update() {
+    @objc private func updateLampViews() {
         let date = Date()
         clock = BerlinClock(date: date)
         display(output: clock.getOutput())
-        digitalTimeLabel.text = getDigitalTime()
     }
     
     private func getDigitalTime() -> String {
@@ -39,6 +38,10 @@ class ClockViewController: UIViewController {
     }
     
     private func display(output: BerlinClock.Lamps) {
+        reset()
+        
+        digitalTimeLabel.text = getDigitalTime()
+        
         secondsLampView.color = output.secondLamp
         
         for index in 0..<output.fiveHourLamps.count {
@@ -60,6 +63,5 @@ class ClockViewController: UIViewController {
             let lampView = singleMinuteLampViews[index]
             lampView.color = output.singleMinuteLamps[index]
         }
-        
     }
 }
